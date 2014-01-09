@@ -6,16 +6,17 @@
 //  Copyright (c) 2014 Peter Kuts. All rights reserved.
 //
 
-#import "PKEntity.h"
-
-const PKEntityId PKEntityIdNull = NSUIntegerMax;
+#import "PKComponent+HeavyweightSupport.h"
 
 @interface PKEntity()
 {
-    NSMutableDictionary *_components;
+    NSMutableArray *_lightComponents;
+    NSMutableArray *_heavyComponents;
 }
 
-@property (nonatomic, retain) NSDictionary *components;
+@property (nonatomic, retain) NSArray *lightComponents;
+@property (nonatomic, retain) NSArray *heavyComponents;
+@property (nonatomic, copy, readwrite) PKEntityId entityId;
 
 @end
 
@@ -28,21 +29,24 @@ const PKEntityId PKEntityIdNull = NSUIntegerMax;
 
 - (id)init
 {
-    return [self initWithId:PKEntityIdNull];
+    return [self initWithId:nil];
 }
 
 - (id)initWithId:(PKEntityId)entityId
 {
     if (self = [super init]) {
-        _entityId = entityId;
-        self.components = [NSMutableDictionary dictionary];
+        self.entityId = entityId;
+        self.lightComponents = [NSMutableArray array];
+        self.heavyComponents = [NSMutableArray array];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    self.components = nil;
+    self.entityId = nil;
+    self.lightComponents = nil;
+    self.heavyComponents = nil;
     
     [super dealloc];
 }
@@ -52,24 +56,60 @@ const PKEntityId PKEntityIdNull = NSUIntegerMax;
 - (void)addComponent:(PKComponent*)component
 {
     NSAssert(component, @"Component must be non-nil");
-    [_components setObject:component forKey:[component type]];
+    [component attachToEntity:self];
+    if ([component isHeavyweight]) {
+        [_heavyComponents addObject:component];
+        for (PKComponent *heavyComp in _heavyComponents) {
+            [(PKHeavyweightComponent *)component componentAdded:heavyComp];
+        }
+        for (PKComponent *lightComp in _lightComponents) {
+            [(PKHeavyweightComponent *)component componentAdded:lightComp];
+        }
+    } else {
+        [_lightComponents addObject:component];
+    }
+    for (PKHeavyweightComponent *heavyComp in _heavyComponents) {
+        [heavyComp componentAdded:component];
+    }
 }
 
-- (PKComponent*)componentByType:(PKComponentType)componentType
+- (void)removeComponent:(PKComponent*)component
 {
-    return [_components objectForKey:componentType];
+    NSAssert(component, @"Component must be non-nil");
+    for (PKHeavyweightComponent *heavyComp in _heavyComponents) {
+        [heavyComp componentRemoved:component];
+    }
+    if ([component isHeavyweight]) {
+        for (PKComponent *heavyComp in _heavyComponents) {
+            [(PKHeavyweightComponent *)component componentRemoved:heavyComp];
+        }
+        for (PKComponent *lightComp in _lightComponents) {
+            [(PKHeavyweightComponent *)component componentRemoved:lightComp];
+        }
+        [_heavyComponents removeObject:component];
+    } else {
+        [_lightComponents removeObject:component];
+    }
+    [component detachFromEntity:self];
 }
 
-- (void)removeComponentByType:(PKComponentType)componentType
+- (void)componentAdded:(PKComponent *)component
 {
-    [_components removeObjectForKey:componentType];
+    for (PKHeavyweightComponent *heavyComp in _heavyComponents) {
+        [heavyComp componentAdded:component];
+    }
 }
 
-#pragma mark - ObjC subscript support
-
-- (PKComponent*)objectForKeyedSubscript:(PKComponentType)key
+- (void)componentRemoved:(PKComponent *)component
 {
-    return [self componentByType:key];
+    for (PKHeavyweightComponent *heavyComp in _heavyComponents) {
+        [heavyComp componentRemoved:component];
+    }
+}
+
+- (NSString*)description
+{
+	return [NSString stringWithFormat:@"<%@ = %p | Id = %@>", [self class], self, _entityId];
 }
 
 @end

@@ -6,4 +6,8 @@
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
+
+    #import "PKComponent.h"
+    #import "PKHeavyweightComponentProtocol.h"
+    #import "PKEntity.h"
 #endif

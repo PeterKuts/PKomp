@@ -6,9 +6,6 @@
 //  Copyright (c) 2014 Peter Kuts. All rights reserved.
 //
 
-#import "PKComponent.h"
-#import <objc/runtime.h>
-
 @implementation PKComponent
 
 + (instancetype)component
@@ -16,14 +13,21 @@
     return [[[self alloc] init] autorelease];
 }
 
-+ (PKComponentType)type
+- (void)attachToEntity:(PKEntity*)entity
 {
-    return NSStringFromClass(self);
+    NSAssert(!_entity, @"Component %@ already attached to entity %@", self, _entity);
+    _entity = entity;
 }
 
-- (PKComponentType)type
+- (void)detachFromEntity:(PKEntity*)entity
 {
-    return [[self class] type];
+    NSAssert(_entity == entity, @"Component %@ not attached to entity %@", self, entity);
+    _entity = nil;
+}
+
+- (NSString*)description
+{
+	return [NSString stringWithFormat:@"<%@ = %p>", [self class], self];
 }
 
 @end

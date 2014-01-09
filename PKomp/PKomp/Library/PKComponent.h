@@ -6,15 +6,14 @@
 //  Copyright (c) 2014 Peter Kuts. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-typedef id<NSCopying> PKComponentType;
+@class PKEntity;
 
 @interface PKComponent : NSObject
 
 + (instancetype)component;
 
-+ (PKComponentType)type;
-- (PKComponentType)type;
+@property (nonatomic, assign, readonly) PKEntity *entity;
+- (void)attachToEntity:(PKEntity*)entity;
+- (void)detachFromEntity:(PKEntity*)entity;
 
 @end

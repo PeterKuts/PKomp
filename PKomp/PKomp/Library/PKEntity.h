@@ -6,31 +6,16 @@
 //  Copyright (c) 2014 Peter Kuts. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "PKComponent.h"
+typedef NSString* PKEntityId;
 
-#if PK_RAW_COMPONENT_TYPES == 1
-#define Component(_entity_, _class_) ((_class_*)_entity_[@#_class_])
-#else
-#define Component(_entity_, _class_) ((_class_*)_entity_[[_class_ type]])
-#endif
-
-typedef NSUInteger PKEntityId;
-
-extern const PKEntityId PKEntityIdNull;
-
-
-@interface PKEntity : NSObject
-
-@property (nonatomic, assign, readonly) PKEntityId entityId;
-@property (nonatomic, retain, readonly) NSDictionary *components;
+@interface PKEntity : PKComponent <PKHeavyweightComponentProtocol>
 
 + (instancetype)entityWithId:(PKEntityId)entityId;
 - (id)initWithId:(PKEntityId)entityId;
 
+@property (nonatomic, copy, readonly) PKEntityId entityId;
+
 - (void)addComponent:(PKComponent*)component;
-- (PKComponent*)componentByType:(PKComponentType)componentType;
-- (void)removeComponentByType:(PKComponentType)componentType;
-- (PKComponent*)objectForKeyedSubscript:(PKComponentType)key;
+- (void)removeComponent:(PKComponent*)component;
 
 @end
