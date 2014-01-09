@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B6B09F7187D5876006BC6D1 /* PKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B09F6187D5876006BC6D1 /* PKComponent.m */; };
+		4B6B09FA187D5DC4006BC6D1 /* PKEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B09F9187D5DC4006BC6D1 /* PKEntity.m */; };
 		4BDF7911186D755C004577AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF7910186D755C004577AC /* Foundation.framework */; };
 		4BDF7916186D755C004577AC /* PKomp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4BDF7915186D755C004577AC /* PKomp.h */; };
 		4BDF7918186D755C004577AC /* PKomp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF7917186D755C004577AC /* PKomp.m */; };
@@ -44,6 +46,10 @@
 
 /* Begin PBXFileReference section */
 		3A428911498F4256881ECCE2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		4B6B09F5187D5876006BC6D1 /* PKComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKComponent.h; sourceTree = "<group>"; };
+		4B6B09F6187D5876006BC6D1 /* PKComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKComponent.m; sourceTree = "<group>"; };
+		4B6B09F8187D5DC4006BC6D1 /* PKEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKEntity.h; sourceTree = "<group>"; };
+		4B6B09F9187D5DC4006BC6D1 /* PKEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKEntity.m; sourceTree = "<group>"; };
 		4BDF790D186D755C004577AC /* libPKomp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPKomp.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDF7910186D755C004577AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BDF7914186D755C004577AC /* PKomp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PKomp-Prefix.pch"; sourceTree = "<group>"; };
@@ -82,6 +88,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B6B09EF187D51C0006BC6D1 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				4B6B09F5187D5876006BC6D1 /* PKComponent.h */,
+				4B6B09F6187D5876006BC6D1 /* PKComponent.m */,
+				4B6B09F8187D5DC4006BC6D1 /* PKEntity.h */,
+				4B6B09F9187D5DC4006BC6D1 /* PKEntity.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		4BDF7904186D755C004577AC = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +136,7 @@
 				4BDF7915186D755C004577AC /* PKomp.h */,
 				4BDF7917186D755C004577AC /* PKomp.m */,
 				4BDF7913186D755C004577AC /* Supporting Files */,
+				4B6B09EF187D51C0006BC6D1 /* Library */,
 			);
 			path = PKomp;
 			sourceTree = "<group>";
@@ -266,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BDF7918186D755C004577AC /* PKomp.m in Sources */,
+				4B6B09FA187D5DC4006BC6D1 /* PKEntity.m in Sources */,
+				4B6B09F7187D5876006BC6D1 /* PKComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +327,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -345,7 +365,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
