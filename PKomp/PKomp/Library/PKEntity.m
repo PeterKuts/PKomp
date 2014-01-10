@@ -16,7 +16,7 @@
 
 @property (nonatomic, retain) NSArray *lightComponents;
 @property (nonatomic, retain) NSArray *heavyComponents;
-@property (nonatomic, copy, readwrite) PKEntityId entityId;
+@property (nonatomic, retain, readwrite) PKEntityId entityId;
 
 @end
 

@@ -6,8 +6,12 @@
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
+    #import <CoreGraphics/CoreGraphics.h>
 
     #import "PKComponent.h"
     #import "PKHeavyweightComponentProtocol.h"
     #import "PKEntity.h"
+    #import "PKSystem.h"
+    #import "PKEvent.h"
+    #import "PKEvent+NSNotification.h"
 #endif

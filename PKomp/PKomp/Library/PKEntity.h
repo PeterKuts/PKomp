@@ -13,7 +13,7 @@ typedef NSString* PKEntityId;
 + (instancetype)entityWithId:(PKEntityId)entityId;
 - (id)initWithId:(PKEntityId)entityId;
 
-@property (nonatomic, copy, readonly) PKEntityId entityId;
+@property (nonatomic, retain, readonly) PKEntityId entityId;
 
 - (void)addComponent:(PKComponent*)component;
 - (void)removeComponent:(PKComponent*)component;
