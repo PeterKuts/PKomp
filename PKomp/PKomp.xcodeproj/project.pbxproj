@@ -13,6 +13,8 @@
 		4BB32CB1187EC06500315FCD /* PKSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32CB0187EC06500315FCD /* PKSystem.m */; };
 		4BB32CBE187ED73C00315FCD /* PKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32CBD187ED73C00315FCD /* PKEvent.m */; };
 		4BB32CEF187FEEAF00315FCD /* PKEvent+NSNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32CEE187FEEAF00315FCD /* PKEvent+NSNotification.m */; };
+		4BB32CF318800E2300315FCD /* NSDictionary+NSValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32CF218800E2300315FCD /* NSDictionary+NSValue.m */; };
+		4BB32CF618800E5B00315FCD /* NSMutableDictionary+NSValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32CF518800E5B00315FCD /* NSMutableDictionary+NSValue.m */; };
 		4BDF7911186D755C004577AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF7910186D755C004577AC /* Foundation.framework */; };
 		4BDF7916186D755C004577AC /* PKomp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4BDF7915186D755C004577AC /* PKomp.h */; };
 		4BDF7918186D755C004577AC /* PKomp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF7917186D755C004577AC /* PKomp.m */; };
@@ -63,6 +65,10 @@
 		4BB32CBD187ED73C00315FCD /* PKEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKEvent.m; sourceTree = "<group>"; };
 		4BB32CED187FEEAF00315FCD /* PKEvent+NSNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKEvent+NSNotification.h"; sourceTree = "<group>"; };
 		4BB32CEE187FEEAF00315FCD /* PKEvent+NSNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKEvent+NSNotification.m"; sourceTree = "<group>"; };
+		4BB32CF118800E2300315FCD /* NSDictionary+NSValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSValue.h"; sourceTree = "<group>"; };
+		4BB32CF218800E2300315FCD /* NSDictionary+NSValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSValue.m"; sourceTree = "<group>"; };
+		4BB32CF418800E5B00315FCD /* NSMutableDictionary+NSValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+NSValue.h"; sourceTree = "<group>"; };
+		4BB32CF518800E5B00315FCD /* NSMutableDictionary+NSValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+NSValue.m"; sourceTree = "<group>"; };
 		4BDF790D186D755C004577AC /* libPKomp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPKomp.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDF7910186D755C004577AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BDF7914186D755C004577AC /* PKomp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PKomp-Prefix.pch"; sourceTree = "<group>"; };
@@ -117,8 +123,20 @@
 				4BB32CBD187ED73C00315FCD /* PKEvent.m */,
 				4BB32CED187FEEAF00315FCD /* PKEvent+NSNotification.h */,
 				4BB32CEE187FEEAF00315FCD /* PKEvent+NSNotification.m */,
+				4BB32CF018800DD300315FCD /* NSExtension */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		4BB32CF018800DD300315FCD /* NSExtension */ = {
+			isa = PBXGroup;
+			children = (
+				4BB32CF118800E2300315FCD /* NSDictionary+NSValue.h */,
+				4BB32CF218800E2300315FCD /* NSDictionary+NSValue.m */,
+				4BB32CF418800E5B00315FCD /* NSMutableDictionary+NSValue.h */,
+				4BB32CF518800E5B00315FCD /* NSMutableDictionary+NSValue.m */,
+			);
+			path = NSExtension;
 			sourceTree = "<group>";
 		};
 		4BDF7904186D755C004577AC = {
@@ -306,11 +324,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BB32CB1187EC06500315FCD /* PKSystem.m in Sources */,
+				4BB32CF318800E2300315FCD /* NSDictionary+NSValue.m in Sources */,
 				4BB32CBE187ED73C00315FCD /* PKEvent.m in Sources */,
 				4BB32CEF187FEEAF00315FCD /* PKEvent+NSNotification.m in Sources */,
 				4BB32CAD187EA6CA00315FCD /* PKComponent+HeavyweightSupport.m in Sources */,
 				4BDF7918186D755C004577AC /* PKomp.m in Sources */,
 				4B6B09FA187D5DC4006BC6D1 /* PKEntity.m in Sources */,
+				4BB32CF618800E5B00315FCD /* NSMutableDictionary+NSValue.m in Sources */,
 				4B6B09F7187D5876006BC6D1 /* PKComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
