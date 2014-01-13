@@ -9,14 +9,14 @@
     #import <CoreGraphics/CoreGraphics.h>
     #import <UIKit/UIKit.h>
 
-    #import "NSDictionary+NSValue.h"
-    #import "NSMutableDictionary+NSValue.h"
+    #import "Library/NSExtension/NSDictionary+NSValue.h"
+    #import "Library/NSExtension/NSMutableDictionary+NSValue.h"
 
-    #import "PKEvent.h"
-    #import "PKEventLink.h"
-    #import "PKEvent+NSNotification.h"
-    #import "PKComponent.h"
-    #import "PKHeavyweightComponentProtocol.h"
-    #import "PKEntity.h"
-    #import "PKSystem.h"
+    #import "Library/Events/PKEvent.h"
+    #import "Library/Events/PKEventLink.h"
+    #import "Library/Events/PKEvent+NSNotification.h"
+    #import "Library/Components/Base/PKComponent.h"
+    #import "Library/Components/Base/PKHeavyweightComponentProtocol.h"
+    #import "Library/Components/PKEntity.h"
+    #import "Library/Components/PKSystem.h"
 #endif
