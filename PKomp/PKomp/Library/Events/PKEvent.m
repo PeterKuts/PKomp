@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Peter Kuts. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface PKEvent()
 {
     BOOL _objectDesignated;
