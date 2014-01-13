@@ -22,37 +22,6 @@
 
 @implementation PKEntity
 
-+ (instancetype)entityWithId:(PKEntityId)entityId
-{
-    return [[[self alloc] initWithId:entityId] autorelease];
-}
-
-- (id)init
-{
-    return [self initWithId:nil];
-}
-
-- (id)initWithId:(PKEntityId)entityId
-{
-    if (self = [super init]) {
-        self.entityId = entityId;
-        self.lightComponents = [NSMutableArray array];
-        self.heavyComponents = [NSMutableArray array];
-    }
-    return self;
-}
-
-- (void)dealloc
-{
-    self.entityId = nil;
-    self.lightComponents = nil;
-    self.heavyComponents = nil;
-    
-    [super dealloc];
-}
-
-#pragma mark - Component managing
-
 - (void)addComponent:(PKComponent*)component
 {
     NSAssert(component, @"Component must be non-nil");
@@ -110,6 +79,55 @@
 - (NSString*)description
 {
 	return [NSString stringWithFormat:@"<%@ = %p | Id = %@>", [self class], self, _entityId];
+}
+
+@end
+
+@implementation PKEntity(PKEvent)
+
+- (void)postEvent:(PKEvent*)event
+{
+    [event designateObject:self];
+    [super postEvent:event];
+}
+
+- (void)subscribeForEvent:(PKEventLink*)eventLink
+{
+    [eventLink designateObject:self];
+    [super subscribeForEvent:eventLink];
+}
+
+@end
+
+@implementation PKEntity (PKEntityCreation)
+
++ (instancetype)entityWithId:(PKEntityId)entityId
+{
+    return [[[self alloc] initWithId:entityId] autorelease];
+}
+
+- (id)init
+{
+    return [self initWithId:nil];
+}
+
+- (id)initWithId:(PKEntityId)entityId
+{
+    if (self = [super init]) {
+        self.entityId = entityId;
+        self.lightComponents = [NSMutableArray array];
+        self.heavyComponents = [NSMutableArray array];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    self.entityId = nil;
+    self.lightComponents = nil;
+    self.heavyComponents = nil;
+    
+    [super dealloc];
 }
 
 @end

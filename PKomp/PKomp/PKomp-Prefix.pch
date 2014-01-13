@@ -12,10 +12,11 @@
     #import "NSDictionary+NSValue.h"
     #import "NSMutableDictionary+NSValue.h"
 
+    #import "PKEvent.h"
+    #import "PKEventLink.h"
+    #import "PKEvent+NSNotification.h"
     #import "PKComponent.h"
     #import "PKHeavyweightComponentProtocol.h"
     #import "PKEntity.h"
     #import "PKSystem.h"
-    #import "PKEvent.h"
-    #import "PKEvent+NSNotification.h"
 #endif

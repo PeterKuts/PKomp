@@ -30,3 +30,22 @@
 }
 
 @end
+
+@implementation PKSystem(PKEvent)
+
+- (void)postEvent:(PKEvent *)event
+{
+    [_notificationCenter postNotification:[event notification]];
+    [super postEvent:event];
+}
+
+- (void)subscribeForEvent:(PKEventLink *)eventLink
+{
+    [_notificationCenter addObserver:eventLink.target
+                            selector:eventLink.selector
+                                name:eventLink.name
+                              object:eventLink.object];
+    [super subscribeForEvent:eventLink];
+}
+
+@end

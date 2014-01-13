@@ -17,3 +17,12 @@
 - (void)detachFromEntity:(PKEntity*)entity;
 
 @end
+
+@interface PKComponent(PKEvent)
+
+- (void)postEvent:(PKEvent*)event;
+- (void)subscribeForEvent:(PKEventLink*)eventLink;
+- (PKEventLink*)eventLink:(NSString*)event selector:(SEL)selector;
+- (PKEventLink*)eventBroadcastLink:(NSString*)event selector:(SEL)selector;
+
+@end

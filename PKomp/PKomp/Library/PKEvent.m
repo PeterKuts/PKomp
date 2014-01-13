@@ -23,8 +23,8 @@
 - (void)designateObject:(id)object
 {
     if (!_objectDesignated) {
-        self.object = object;
         _objectDesignated = YES;
+        self.object = object;
     }
 }
 

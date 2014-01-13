@@ -10,12 +10,16 @@ typedef NSString* PKEntityId;
 
 @interface PKEntity : PKComponent <PKHeavyweightComponentProtocol>
 
-+ (instancetype)entityWithId:(PKEntityId)entityId;
-- (id)initWithId:(PKEntityId)entityId;
-
 @property (nonatomic, retain, readonly) PKEntityId entityId;
 
 - (void)addComponent:(PKComponent*)component;
 - (void)removeComponent:(PKComponent*)component;
+
+@end
+
+@interface PKEntity(PKEntityCreation)
+
++ (instancetype)entityWithId:(PKEntityId)entityId;
+- (id)initWithId:(PKEntityId)entityId;
 
 @end

@@ -31,3 +31,27 @@
 }
 
 @end
+
+@implementation PKComponent(PKEvent)
+
+- (void)postEvent:(PKEvent*)event
+{
+    [_entity postEvent:event];
+}
+
+- (void)subscribeForEvent:(PKEventLink*)eventLink
+{
+    [_entity subscribeForEvent:eventLink];
+}
+
+- (PKEventLink*)eventLink:(NSString*)event selector:(SEL)selector
+{
+    return [PKEventLink eventLinkWithName:event target:self selector:selector];
+}
+
+- (PKEventLink*)eventBroadcastLink:(NSString*)event selector:(SEL)selector
+{
+    return [PKEventBroadcastLink eventLinkWithName:event target:self selector:selector];
+}
+
+@end
