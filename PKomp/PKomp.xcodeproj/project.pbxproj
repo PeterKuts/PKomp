@@ -14,6 +14,7 @@
 		4B1A494E1883E743009837F6 /* PKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A49471883E743009837F6 /* PKComponent.m */; };
 		4B1A494F1883E743009837F6 /* PKEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A494A1883E743009837F6 /* PKEntity.m */; };
 		4B1A49501883E743009837F6 /* PKSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A494C1883E743009837F6 /* PKSystem.m */; };
+		4B26CD06188527C00075E233 /* PKEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B26CD05188527C00075E233 /* PKEvents.m */; };
 		4BB32CF318800E2300315FCD /* NSDictionary+NSValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32CF218800E2300315FCD /* NSDictionary+NSValue.m */; };
 		4BB32CF618800E5B00315FCD /* NSMutableDictionary+NSValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB32CF518800E5B00315FCD /* NSMutableDictionary+NSValue.m */; };
 		4BDF7911186D755C004577AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF7910186D755C004577AC /* Foundation.framework */; };
@@ -68,6 +69,9 @@
 		4B1A494A1883E743009837F6 /* PKEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKEntity.m; sourceTree = "<group>"; };
 		4B1A494B1883E743009837F6 /* PKSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKSystem.h; sourceTree = "<group>"; };
 		4B1A494C1883E743009837F6 /* PKSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKSystem.m; sourceTree = "<group>"; };
+		4B26CD04188527C00075E233 /* PKEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKEvents.h; sourceTree = "<group>"; };
+		4B26CD05188527C00075E233 /* PKEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKEvents.m; sourceTree = "<group>"; };
+		4B26CD07188527E70075E233 /* PKEvents_Decl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKEvents_Decl.h; sourceTree = "<group>"; };
 		4BB32CF118800E2300315FCD /* NSDictionary+NSValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSValue.h"; sourceTree = "<group>"; };
 		4BB32CF218800E2300315FCD /* NSDictionary+NSValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSValue.m"; sourceTree = "<group>"; };
 		4BB32CF418800E5B00315FCD /* NSMutableDictionary+NSValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+NSValue.h"; sourceTree = "<group>"; };
@@ -119,6 +123,9 @@
 				4B1A493C1883E6F9009837F6 /* PKEvent.m */,
 				4B1A493D1883E6F9009837F6 /* PKEventLink.h */,
 				4B1A493E1883E6F9009837F6 /* PKEventLink.m */,
+				4B26CD04188527C00075E233 /* PKEvents.h */,
+				4B26CD05188527C00075E233 /* PKEvents.m */,
+				4B26CD07188527E70075E233 /* PKEvents_Decl.h */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -360,6 +367,7 @@
 				4B1A49501883E743009837F6 /* PKSystem.m in Sources */,
 				4BDF7918186D755C004577AC /* PKomp.m in Sources */,
 				4B1A49411883E6F9009837F6 /* PKEventLink.m in Sources */,
+				4B26CD06188527C00075E233 /* PKEvents.m in Sources */,
 				4B1A494E1883E743009837F6 /* PKComponent.m in Sources */,
 				4BB32CF618800E5B00315FCD /* NSMutableDictionary+NSValue.m in Sources */,
 			);

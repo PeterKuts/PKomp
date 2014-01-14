@@ -48,4 +48,10 @@
     [super subscribeForEvent:eventLink];
 }
 
+- (void)unsubscribeFromEvent:(PKEventLink *)eventLink
+{
+    [_notificationCenter removeObserver:eventLink.target name:eventLink.name object:eventLink.object];
+    [super unsubscribeFromEvent:eventLink];
+}
+
 @end

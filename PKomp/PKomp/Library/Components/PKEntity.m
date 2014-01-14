@@ -97,6 +97,12 @@
     [super subscribeForEvent:eventLink];
 }
 
+- (void)unsubscribeFromEvent:(PKEventLink *)eventLink
+{
+    [eventLink designateObject:self];
+    [super unsubscribeFromEvent:eventLink];
+}
+
 @end
 
 @implementation PKEntity (PKEntityCreation)

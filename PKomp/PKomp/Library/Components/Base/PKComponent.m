@@ -44,14 +44,9 @@
     [_entity subscribeForEvent:eventLink];
 }
 
-- (PKEventLink*)eventLink:(NSString*)event selector:(SEL)selector
+- (void)unsubscribeFromEvent:(PKEventLink*)eventLink
 {
-    return [PKEventLink eventLinkWithName:event target:self selector:selector];
-}
-
-- (PKEventLink*)eventBroadcastLink:(NSString*)event selector:(SEL)selector
-{
-    return [PKEventBroadcastLink eventLinkWithName:event target:self selector:selector];
+    [_entity unsubscribeFromEvent:eventLink];
 }
 
 @end

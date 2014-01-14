@@ -15,6 +15,7 @@
     #import "Library/Events/PKEvent.h"
     #import "Library/Events/PKEventLink.h"
     #import "Library/Events/PKEvent+NSNotification.h"
+    #import "Library/Events/PKEvents.h"
     #import "Library/Components/Base/PKComponent.h"
     #import "Library/Components/Base/PKHeavyweightComponentProtocol.h"
     #import "Library/Components/PKEntity.h"
