@@ -13,8 +13,10 @@
 + (instancetype)component;
 
 @property (nonatomic, assign, readonly) PKEntity *entity;
-- (void)attachToEntity:(PKEntity*)entity;
-- (void)detachFromEntity:(PKEntity*)entity;
+@property (nonatomic, assign, readonly) BOOL inSystem;
+
+- (void)onEnterSystem;
+- (void)onExitSystem;
 
 @end
 

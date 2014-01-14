@@ -72,6 +72,7 @@
 		4B26CD04188527C00075E233 /* PKEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKEvents.h; sourceTree = "<group>"; };
 		4B26CD05188527C00075E233 /* PKEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKEvents.m; sourceTree = "<group>"; };
 		4B26CD07188527E70075E233 /* PKEvents_Decl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKEvents_Decl.h; sourceTree = "<group>"; };
+		4B26CD0B188542750075E233 /* PKComponent_Protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKComponent_Protected.h; sourceTree = "<group>"; };
 		4BB32CF118800E2300315FCD /* NSDictionary+NSValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSValue.h"; sourceTree = "<group>"; };
 		4BB32CF218800E2300315FCD /* NSDictionary+NSValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSValue.m"; sourceTree = "<group>"; };
 		4BB32CF418800E5B00315FCD /* NSMutableDictionary+NSValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+NSValue.h"; sourceTree = "<group>"; };
@@ -145,11 +146,12 @@
 		4B1A49431883E743009837F6 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				4B1A49441883E743009837F6 /* PKComponent+HeavyweightSupport.h */,
-				4B1A49451883E743009837F6 /* PKComponent+HeavyweightSupport.m */,
 				4B1A49461883E743009837F6 /* PKComponent.h */,
 				4B1A49471883E743009837F6 /* PKComponent.m */,
+				4B26CD0B188542750075E233 /* PKComponent_Protected.h */,
 				4B1A49481883E743009837F6 /* PKHeavyweightComponentProtocol.h */,
+				4B1A49441883E743009837F6 /* PKComponent+HeavyweightSupport.h */,
+				4B1A49451883E743009837F6 /* PKComponent+HeavyweightSupport.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";

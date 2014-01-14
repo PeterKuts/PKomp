@@ -7,6 +7,7 @@
 //
 
 #import "PKComponent+HeavyweightSupport.h"
+#import "PKComponent_Protected.h"
 
 @interface PKEntity()
 {
@@ -40,11 +41,17 @@
     for (PKHeavyweightComponent *heavyComp in _heavyComponents) {
         [heavyComp componentAdded:component];
     }
+    if (self.inSystem) {
+        [component onEnterSystem];
+    }
 }
 
 - (void)removeComponent:(PKComponent*)component
 {
     NSAssert(component, @"Component must be non-nil");
+    if (self.inSystem) {
+        [component onExitSystem];
+    }
     for (PKHeavyweightComponent *heavyComp in _heavyComponents) {
         [heavyComp componentRemoved:component];
     }
@@ -74,6 +81,20 @@
     for (PKHeavyweightComponent *heavyComp in _heavyComponents) {
         [heavyComp componentRemoved:component];
     }
+}
+
+- (void)onEnterSystem
+{
+    [super onEnterSystem];
+    [self.lightComponents makeObjectsPerformSelector:@selector(onEnterSystem)];
+    [self.heavyComponents makeObjectsPerformSelector:@selector(onEnterSystem)];
+}
+
+- (void)onExitSystem
+{
+    [self.heavyComponents makeObjectsPerformSelector:@selector(onExitSystem)];
+    [self.lightComponents makeObjectsPerformSelector:@selector(onExitSystem)];
+    [super onExitSystem];
 }
 
 - (NSString*)description

@@ -18,12 +18,14 @@
 {
     if (self = [super initWithId:entityId]) {
         self.notificationCenter = [[NSNotificationCenter new] autorelease];
+        [self onEnterSystem];
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [self onExitSystem];
     self.notificationCenter = nil;
     
     [super dealloc];

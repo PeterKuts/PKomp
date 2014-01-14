@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Peter Kuts. All rights reserved.
 //
 
+#import "PKComponent_Protected.h"
+
 @implementation PKComponent
 
 + (instancetype)component
@@ -23,6 +25,18 @@
 {
     NSAssert(_entity == entity, @"Component %@ not attached to entity %@", self, entity);
     _entity = nil;
+}
+
+- (void)onEnterSystem
+{
+    NSAssert(!_inSystem, @"Component %@ already in system!", self);
+    _inSystem = YES;
+}
+
+- (void)onExitSystem
+{
+    NSAssert(_inSystem, @"Component %@ not in system!", self);
+    _inSystem = NO;
 }
 
 - (NSString*)description
