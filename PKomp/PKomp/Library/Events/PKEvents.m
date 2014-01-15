@@ -9,6 +9,6 @@
 #define EVENT(_event) \
 NSString* const _event = @#_event;
 
-#include "PKEvents_Decl.h"
+#include "PKEvents_Decl.def"
 
 #undef EVENT
